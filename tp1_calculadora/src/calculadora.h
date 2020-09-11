@@ -18,24 +18,16 @@ void operarMenu();
 /**
  * brief opcion que ofrece un menu con opciones para elegir
  * param no lleva parametros
- * return 1 si esta bien 0 si esta mal
+ * return la opcion seleccionada del menu
  **/
 int menu();
 
 /**
  * brief opcion del menu para ingresar el primer operando
  * param no lleva parametros
- * return 1 si esta bien 0 si esta mal
+ * return el operando ingresado
  **/
 int ingresarOperando();
-
-
-/**
- * brief opcion del menu para hacer todos los calculos indicados
- * param no lleva parametros
- * return 1 si esta bien 0 si esta mal
- **/
-void calcularTodasLasOperaciones();
 
 /**
  * brief calculo la suma entre dos operandos
