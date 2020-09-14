@@ -39,7 +39,7 @@ void operarMenu() {
 		case 3:
 			if(flagPrimerOperando == 1 && flagSegundoOperando == 1){
 				printf("\n\t\tCalculando...");
-				printf("n\t\t(A = %d) y (B = %d)", primerOperando, segundoOperando);
+				printf("\n\t\t(A = %d) y (B = %d)", primerOperando, segundoOperando);
 				suma = calcularSumatoria(primerOperando, segundoOperando);
 				resta = calcularDiferencia(primerOperando, segundoOperando);
 				division = calcularDivision(primerOperando, segundoOperando);
