@@ -231,18 +231,36 @@ int sortEmployees(Employee* list, int len, int order) {
 				toReturn = 0;
 				break;
 			case 0:
-				printf("\n\t\t[0] indicate DOWN");
-				for(int i = 0; i > len -1; i++){
-					for(int j = i +1; j > len; j++){
-						if(list[i].lastName > list[j].lastName){
+				for(int i = 0; i > countEmployeesToSort -1; i++){
+					for(int j = i +1; j > countEmployeesToSort; j++){
+						if(strcmp(list[i].lastName, list[j].lastName) > 0){
+							strcpy(auxName, list[i].name);
+							strcpy(list[i].name, list[j].name);
+							strcpy(list[j].name, auxName);
 							strcpy(auxLastName, list[i].lastName);
 							strcpy(list[i].lastName, list[j].lastName);
 							strcpy(list[j].lastName, auxLastName);
-						}
-						if(list[i].sector > list[j].sector){
 							auxSector = list[i].sector;
 							list[i].sector = list[j].sector;
 							list[j].sector = auxSector;
+							auxSalary = list[i].salary;
+							list[i].salary = list[j].salary;
+							list[j].salary = auxSalary;
+						} else if(strcmp(list[i].lastName, list[j].lastName) == 0){
+							if(list[i].sector >= list[j].sector){
+								strcpy(auxName, list[i].name);
+								strcpy(list[i].name, list[j].name);
+								strcpy(list[j].name, auxName);
+								strcpy(auxLastName, list[i].lastName);
+								strcpy(list[i].lastName, list[j].lastName);
+								strcpy(list[j].lastName, auxLastName);
+								auxSector = list[i].sector;
+								list[i].sector = list[j].sector;
+								list[j].sector = auxSector;
+								auxSalary = list[i].salary;
+								list[i].salary = list[j].salary;
+								list[j].salary = auxSalary;
+							}
 						}
 					}
 				}
